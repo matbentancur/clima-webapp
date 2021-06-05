@@ -47,3 +47,13 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+.background{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.background-clear-sky{
+  background-image: url('../images/clear-sky.jpg');
+}
