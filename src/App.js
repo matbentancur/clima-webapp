@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BuscarCiudad from "./BuscarCiudad";
 import Clima from './Clima';
+import Mapa from './Mapa';
 
 export default class App extends Component {
     constructor(props) {
@@ -55,6 +56,7 @@ export default class App extends Component {
             {this.state.latitud && <p>Latitud: {this.state.latitud}</p>}
             {this.state.longitud && <p>Longitud: {this.state.longitud}</p>}
             {this.state.mostrarClima ? <Clima data={this.state}/> : null}
+            <Mapa />
         </div>
         )
     }
