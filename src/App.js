@@ -10,6 +10,7 @@ export default class App extends Component {
             latitud: 0,
             longitud: 0,
             ciudad: '',
+            pais: '',
             mostrarClima: false,
             mensajeDeError: false
         }; 
@@ -29,6 +30,7 @@ export default class App extends Component {
         .then((result) => result.json())
         .then((result) => {
             this.setState({ciudad: result[0].name});
+            this.setState({pais: result[0].country});
             this.setState({mostrarClima: true});
             this.setState({mensajeDeError: false}); 
         })
@@ -49,14 +51,34 @@ export default class App extends Component {
     }
     render() {
         return (
-        <div className="App">
-            <h1>RIA 2021 - Clima</h1>
-            <BuscarCiudad />
-            <h4>Obtenido a partir de la geolocalización</h4>
-            {this.state.latitud && <p>Latitud: {this.state.latitud}</p>}
-            {this.state.longitud && <p>Longitud: {this.state.longitud}</p>}
-            {this.state.mostrarClima ? <Clima data={this.state}/> : null}
-            <Mapa />
+        // <div className="App">
+        //     <BuscarCiudad />
+        //     <h4>Obtenido a partir de la geolocalización</h4>
+        //     {this.state.latitud && <p>Latitud: {this.state.latitud}</p>}
+        //     {this.state.longitud && <p>Longitud: {this.state.longitud}</p>}
+        //     {this.state.mostrarClima ? <Clima data={this.state}/> : null}
+        // </div>
+        <div class="card-main">
+            <div class="row row-cols-1">
+                <div class="col city">
+                    <p class="fs-2">{this.state.ciudad}</p>
+                </div>
+                <div class="col country">
+                    <p class="fs-4">{this.state.pais}</p>
+                </div>
+                <Clima data={this.state}/>
+            </div>
+            <div class="row row-cols-2">
+                <div class="col extra-value">Máxima</div>
+                <div class="col extra-value">Mínima</div>
+                <div class="col extra-value">Sensación Térmica</div>
+                <div class="col extra-value">Humedad</div>
+                <div class="col extra-value">Presión</div>
+                <div class="col extra-value">Nubosidad</div>
+                <div class="col extra-value">Viento</div>
+                <div class="col extra-value">Presión</div>
+                <div class="col extra-value">Presión</div>
+            </div>
         </div>
         )
     }

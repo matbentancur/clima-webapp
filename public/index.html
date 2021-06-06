@@ -43,7 +43,20 @@
             </header>
 
             <main class="px-3">
-                <div id="root"></div>
+                <div class="container">
+                    
+                    <form onSubmit={this.handleSubmit}>
+                        <div class="search">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Ingrese una ciudad" aria-label="Ingrese una ciudad" aria-describedby="button-addon2">
+                                <button type="submit" class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                  <div id="root"></div>
+
+                </div>
             </main>
 
             <footer class="mt-auto">
