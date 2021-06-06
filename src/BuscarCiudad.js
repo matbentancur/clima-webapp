@@ -9,7 +9,6 @@ export default class BuscarCiudad extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
-
     handleSubmit(event) {
         event.preventDefault();       
         this.setState({ciudad: this.element.value });

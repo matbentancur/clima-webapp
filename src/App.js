@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BuscarCiudad from "./BuscarCiudad";
 import Clima from './Clima';
-import Mapa from './Mapa';
+import Map from './Mapa';
 
 export default class App extends Component {
     constructor(props) {
@@ -56,7 +56,14 @@ export default class App extends Component {
             {this.state.latitud && <p>Latitud: {this.state.latitud}</p>}
             {this.state.longitud && <p>Longitud: {this.state.longitud}</p>}
             {this.state.mostrarClima ? <Clima data={this.state}/> : null}
-            <Mapa />
+            <Map
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+                loadingElement={<div style={{ height: `100%`, width: `50%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%`, width: `50%` }} />}
+                center={{ lat: -32.928523, lng: -56.083731 }}
+                zoom={6}
+            />
         </div>
         )
     }

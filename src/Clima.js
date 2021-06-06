@@ -34,14 +34,23 @@ export default class Clima extends Component {
     }
 
     render() {
-        return (
-        <div className="Clima">
-            <p>Ciudad: {this.props.data.ciudad}</p>
-            {this.state.mensajeDeError || this.props.data.mensajeDeError ? <p>Ocurrió un error, no se pudo obtener el clima</p> : 
-            <p>Clima: {this.state.clima}</p>}
-            <p>Temperatura: {this.state.temperatura}°C</p>
-        </div>
-        )
+        const error = this.state.mensajeDeError;
+        const propsError = this.props.data.mensajeDeError;
+        if (error || propsError) {
+            return (
+                <div className="Clima">
+                    <p>Ocurrió un error, no se pudo obtener el clima</p>;
+              </div>
+            );
+        } else {
+            return (
+                <div className="Clima">
+                    <p>Ciudad: {this.props.data.ciudad}</p>
+                    <p>Clima: {this.state.clima}</p>
+                    <p>Temperatura: {this.state.temperatura}°C</p>
+            </div>
+            );
+      }
     }
   
 }
