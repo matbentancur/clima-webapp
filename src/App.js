@@ -60,17 +60,6 @@ export default class App extends Component {
                 </div>
                 <Clima data={this.state}/>
             </div>
-            <div class="row row-cols-2">
-                <div class="col extra-value">Máxima</div>
-                <div class="col extra-value">Mínima</div>
-                <div class="col extra-value">Sensación Térmica</div>
-                <div class="col extra-value">Humedad</div>
-                <div class="col extra-value">Presión</div>
-                <div class="col extra-value">Nubosidad</div>
-                <div class="col extra-value">Viento</div>
-                <div class="col extra-value">Presión</div>
-                <div class="col extra-value">Presión</div>
-            </div>
 
             <div class="row row-cols-1">
                 <Map
