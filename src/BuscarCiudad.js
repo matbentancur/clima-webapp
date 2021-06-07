@@ -18,13 +18,13 @@ export default class BuscarCiudad extends Component {
     render() {
         return (
         <div>
-            <form class="row g-3" onSubmit={this.handleSubmit}>
-                <div class="col-auto">                
-                    <input type="text" ref={el => this.element = el} class="form-control" ciudad={this.state.ciudad} placeholder="Ingrese una ciudad"/>
+            <form onSubmit={this.handleSubmit}>
+            <div class="search">
+                <div class="input-group mb-3">
+                    <input type="text" ref={el => this.element = el}  class="form-control" ciudad={this.state.ciudad}  placeholder="Ingrese una ciudad" aria-label="Ingrese una ciudad" aria-describedby="button-addon2"/>
+                    <button type="submit" class="btn btn-primary" id="button-addon2">Buscar</button>
                 </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                </div>
+            </div>
             </form>
             {this.state.mostrarClima ? <Clima data={this.state}/> : null}
         </div>
