@@ -53,7 +53,7 @@ export default class App extends Component {
         <div class="card-main">
             <div class="row row-cols-1">
                 <div class="col city">
-                    <p class="fs-2">{this.state.ciudad}</p>
+                    <p class="fs-2 text-decoration-underline">{this.state.ciudad}</p>
                 </div>
                 <div class="col country">
                     <p class="fs-4">{this.state.pais}</p>

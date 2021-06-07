@@ -38,6 +38,18 @@ body {
   width: 50%;
 }
 
+img .fondo{
+    min-height: 100%;
+    min-width: 1024px;
+    
+    width: 100%;
+    height: auto;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .background{
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,79 +57,85 @@ body {
 }
 
 .background-default{
-  background-image: url('../images/default.jpg');
+  background-image: url('../images/backgrounds/default.jpg');
 }
 
 .background-clear-sky-day{
-  background-image: url('../images/clear-sky-day.jpg');
+  background-image: url('../images/backgrounds/clear-sky-day.jpg');
 }
 
 .background-clear-sky-night{
-  background-image: url('../images/clear-sky-night.jpg');
+  background-image: url('../images/backgrounds/clear-sky-night.jpg');
 }
 
 .background-few-clouds-day{
-  background-image: url('../images/few-clouds-day.jpg');
+  background-image: url('../images/backgrounds/few-clouds-day.jpg');
 }
 
 .background-few-clouds-night{
-  background-image: url('../images/few-clouds-night.jpg');
+  background-image: url('../images/backgrounds/few-clouds-night.jpg');
 }
 
 .background-scattered-clouds-day{
-  background-image: url('../images/scattered-clouds-day.jpg');
+  background-image: url('../images/backgrounds/scattered-clouds-day.jpg');
 }
 
 .background-scattered-clouds-night{
-  background-image: url('../images/scattered-clouds-night.jpg');
+  background-image: url('../images/backgrounds/scattered-clouds-night.jpg');
 }
 
 .background-broken-clouds-day{
-  background-image: url('../images/broken\ clouds-day.jpg');
+  background-image: url('../images/backgrounds/broken-clouds-day.jpg');
 }
 
 .background-broken-clouds-night{
-  background-image: url('../images/broken\ clouds-night.jpg');
+  background-image: url('../images/backgrounds/broken-clouds-night.jpg');
 }
 
 .background-shower-rain-day{
-  background-image: url('../images/shower-rain-day.jpg');
+  background-image: url('../images/backgrounds/shower-rain-day.jpg');
 }
 
 .background-shower-rain-night{
-  background-image: url('../images/shower-rain-night.jpg');
+  background-image: url('../images/backgrounds/shower-rain-night.jpg');
 }
 
 .background-rain-day{
-  background-image: url('../images/rain-day.jpg');
+  background-image: url('../images/backgrounds/rain-day.jpg');
 }
 
 .background-rain-night{
-  background-image: url('../images/rain-night.jpg');
+  background-image: url('../images/backgrounds/rain-night.jpg');
 }
 
 .background-thunderstorm-day{
-  background-image: url('../images/thunderstorn-day.jpg');
+  background-image: url('../images/backgrounds/thunderstorn-day.jpg');
 }
 
 .background-thunderstorm-night{
-  background-image: url('../images/thunderstorn-night.jpg');
+  background-image: url('../images/backgrounds/thunderstorn-night.jpg');
 }
 
 .background-snow-day{
-  background-image: url('../images/snow-day.jpg');
+  background-image: url('../images/backgrounds/snow-day.jpg');
 }
 
 .background-snow-night{
-  background-image: url('../images/snow-night.jpg');
+  background-image: url('../images/backgrounds/snow-night.jpg');
 }
 
 .background-mist-day{
-  background-image: url('../images/mist-day.jpg');
+  background-image: url('../images/backgrounds/mist-day.jpg');
 }
 
 .background-mist-night{
-  background-image: url('../images/mist-night.jpg');
+  background-image: url('../images/backgrounds/mist-night.jpg');
+}
+
+.icon{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .card-main{
@@ -140,6 +158,10 @@ body {
 .card-main .icon img{
   width: 30%;
   height: 90%;
+}
+
+.extra-value p{
+  padding-left: 20%;
 }
 
 .search {

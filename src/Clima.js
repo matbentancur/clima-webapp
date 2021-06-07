@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Icono from './Icono';
+import Background from './Background';
 
 export default class Clima extends Component {
     constructor(props) {
@@ -63,38 +65,38 @@ export default class Clima extends Component {
         // <p>Temperatura: {this.state.temperatura}°C</p>
         <div className="Clima">
             <div class="col temperature">
-                    <p class="fs-1">{this.state.temperatura}°C</p>
+                    <p class="fs-1 badge bg-secondary text-wrap">{this.state.temperatura}°C</p>
             </div>
             <div class="col icon">
-                <img src="./images/cloudy.svg" alt=""/>
+                <Icono data={this.state}/>
             </div>
             <div class="col description">
                 <p class="fs-1">{this.state.clima}</p>
             </div>
             <div class="row row-cols-2">
                 <div class="col extra-value">
-                    <p class="fs-4">Máxima: {this.state.maxima}°C</p>
+                    <p class="text-start">Máxima: {this.state.maxima}°C</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Mínima: {this.state.minima}°C</p>
+                    <p class="text-start "> Mínima: {this.state.minima}°C</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Sensación Térmica: {this.state.sensacionTermica}°C</p>
+                    <p class="text-start">Sensación Térmica: {this.state.sensacionTermica}°C</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Presión: {this.state.presion} hPa</p>
+                    <p class="text-start">Presión: {this.state.presion} hPa</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Humedad: {this.state.humedad}%</p>
+                    <p class="text-start">Humedad: {this.state.humedad}%</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Nubosidad: {this.state.nubosidad}%</p>
+                    <p class="text-start">Nubosidad: {this.state.nubosidad}%</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Viento: {this.state.viento} m/s</p>
+                    <p class="text-start">Viento: {this.state.viento} m/s</p>
                 </div>
                 <div class="col extra-value">
-                    <p class="fs-4">Visibilidad: {this.state.visibilidad}</p>
+                    <p class="text-start">Visibilidad: {this.state.visibilidad} m</p>
                 </div>
             </div>
         </div>
