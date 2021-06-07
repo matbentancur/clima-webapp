@@ -1,57 +1,47 @@
 import React, { Component } from "react";
-import Icono from './Icono';
-import Background from './Background';
 
-export default class Clima extends Component {
+export default class Pronostico extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ciudad: this.props.data.ciudad,
-            pais: this.props.data.pais,
+            latitud: this.props.data.latitud,
+            longitud: this.props.data.longitud,
             clima: '', 
             temperatura: 0,
             icono: '',
-            sensacionTermica: 0,
             minima: 0,
             maxima: 0,
-            presion: 0,
             humedad: 0,
-            visibilidad: 0,
             viento: 0,  
-            nubosidad: 0,  
             mensajeDeError: false
         };
       }
 
     componentDidMount() {
-        this.obtenerClima(this.props.data.ciudad);
+        this.obtenerPronostico(this.props.data.ciudad);
     };
 
     componentDidUpdate(prevProps) {
         if (this.props.data.ciudad !== prevProps.data.ciudad) {
-            this.obtenerClima(this.props.data.ciudad);
+            this.obtenerPronostico(this.props.data.ciudad);
         }
     };
 
-    obtenerClima(ciudad) {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}&units=metric`
+    obtenerPronostico(ciudad) {
+        const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitud}&lon=${longitud}&exclude=current,minutely,hourly,alerts&lang=es&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}&units=metric`
         fetch(url)
         .then((result) => result.json())
         .then((result) => {
             this.setState({
-                ciudad: this.props.data.ciudad,
-                pais: this.props.data.pais,
+                latitud: this.props.data.latitud,
+                longitud: this.props.data.longitud,
                 clima: result.weather[0].description,
                 temperatura: result.main.temp,
                 icono: result.weather[0].icon,
-                sensacionTermica: result.main.feels_like,
                 minima: result.main.temp_min,
                 maxima: result.main.temp_max,
-                presion: result.main.pressure,
                 humedad: result.main.humidity,
-                visibilidad: result.visibility,
                 viento: result.wind.speed,
-                nubosidad: result.clouds.all,
                 mensajeDeError: false
             }); 
         })
@@ -69,7 +59,7 @@ export default class Clima extends Component {
         // <p>Temperatura: {this.state.temperatura}°C</p>
         
         <div class="tarjeta">
-            <div class="tarjeta-clima">
+            <div class="tarjeta-pronostico">
                 <Background data={this.state}/>
                 <div class="row row-cols-1">
                     <div class="col city">

@@ -109,9 +109,7 @@ export default class Icono extends Component {
 
     render() {
         return (
-            <div>
-                <img src={this.state.icono} alt=""/>
-            </div>
+            <img src={this.state.icono} alt=""/>
         )
     }
   

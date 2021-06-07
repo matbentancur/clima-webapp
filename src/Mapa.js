@@ -35,18 +35,22 @@ class MapWithMarkers extends React.Component {
 
   render() {
     return (
-      <div>
-        <GoogleMap
-          onClick={this.addMarker.bind(this)}
-          defaultZoom={this.props.zoom}
-          defaultCenter={this.props.center}
-        >
-              <Marker
-                position={{ lat: this.state.latitud, lng: this.state.longitud }}
-              />
-        </GoogleMap>
-      {this.state.mostrarClima ? <Clima data={this.state}/> : null}
-      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-mapa">
+          <div class="row row-cols-1">
+                <GoogleMap
+                  onClick={this.addMarker.bind(this)}
+                  defaultZoom={this.props.zoom}
+                  defaultCenter={this.props.center}
+                >
+                      <Marker
+                        position={{ lat: this.state.latitud, lng: this.state.longitud }}
+                      />
+                </GoogleMap>
+                {this.state.mostrarClima ? <Clima data={this.state}/> : null}
+            </div>
+          </div>
+        </div>
     );
   }
 }

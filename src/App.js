@@ -51,25 +51,20 @@ export default class App extends Component {
     }
     render() {
         return (
-        <div class="card-panel">
+        <div class="panel-tarjetas">
             <BuscarCiudad />
-            <div class="card card-main">
-                <Clima data={this.state}/>
-            </div>
-            <div class="card-map">
-                <div class="row row-cols-1">
-                <Map
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
-                    loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
-                    mapElement={<div style={{ height: `100%`, width: `100%` }} />}
-                    center={{ lat: -32.928523, lng: -56.083731 }}
-                    zoom={6}
-                />
-                </div>
-            </div>
+            <Clima 
+                data={this.state}
+            />
+            <Map
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+                loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%`, width: `100%` }} />}
+                center={{ lat: -32.928523, lng: -56.083731 }}
+                zoom={6}
+            />
         </div>
-
         )
     }
   
