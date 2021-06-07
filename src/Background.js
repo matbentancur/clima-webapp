@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
 
 import clearSkyDay from './images/backgrounds/clear-sky-day.jpg'
 import clearSkyNight from './images/backgrounds/clear-sky-night.jpg'
@@ -48,70 +49,93 @@ export default class Background extends Component {
     };
 
     cambiarFondo(icono) {
+        let element = document.getElementById("body");
+        let backgroundStyle = "background-default";
+
         if (icono === '01d'){
             this.setState({fondo: clearSkyDay});
+            backgroundStyle = "background-clear-sky-day";
         }
         else if(icono === '01d'){
             this.setState({fondo: clearSkyNight});
+            backgroundStyle = "background-clear-sky-night";
         }
         else if(icono === '02d'){
             this.setState({fondo: fewCloudsDay});
+            backgroundStyle = "background-few-clouds-day";
         }
         else if(icono === '02n'){
             this.setState({fondo: fewCloudsNight});
+            backgroundStyle = "background-few-clouds-night";
         }
         else if(icono === '03d'){
             this.setState({fondo: scatteredCloudsDay});
+            backgroundStyle = "background-scattered-clouds-day";
         }
         else if(icono === '03n'){
             this.setState({fondo: scatteredCloudsNight});
+            backgroundStyle = "background-scattered-clouds-night";
         }
         else if(icono === '04d'){
             this.setState({fondo: brokenCloudsDay});
+            backgroundStyle = "background-broken-clouds-day";
         }
         else if(icono === '04n'){
             this.setState({fondo: brokenCloudsNight});
+            backgroundStyle = "background-broken-clouds-night";
         }
         else if(icono === '09d'){
             this.setState({fondo: showerRainDay});
+            backgroundStyle = "background-shower-rain-day";
         }
         else if(icono === '09n'){
             this.setState({fondo: showerRainNight});
+            backgroundStyle = "background-shower-rain-night";
         }
         else if(icono === '10d'){
             this.setState({fondo: rainDay});
+            backgroundStyle = "background-rain-day";
         }
         else if(icono === '10n'){
             this.setState({fondo: rainNight});
+            backgroundStyle = "background-rain-night";
         }
         else if(icono === '11d'){
             this.setState({fondo: thunderstornDay});
+            backgroundStyle = "background-thunderstorm-day";
         }
         else if(icono === '11n'){
             this.setState({fondo: thunderstornNight});
+            backgroundStyle = "background-thunderstorm-night";
         }
         else if(icono === '13d'){
             this.setState({fondo: snowDay});
+            backgroundStyle = "background-snow-day";
         }
         else if(icono === '13n'){
             this.setState({fondo: snowNight});
+            backgroundStyle = "background-snow-night";
         }
         else if(icono === '50d'){
             this.setState({fondo: mistDay});
+            backgroundStyle = "background-mist-day";
         }
         else if(icono === '50n'){
             this.setState({fondo: mistNight});
+            backgroundStyle = "background-mist-night";
         }
         else{
             this.setState({fondo: defaultBackground});
+            backgroundStyle = "background-default";
         }
+
+        ReactDOM.findDOMNode(element).classList.add(backgroundStyle);
+        
     }
 
         render() {
         return (
-            <div>
-                <img className='fondo' src={this.state.fondo} alt=""/>
-            </div>
+            <div></div>
         )
     }
 }

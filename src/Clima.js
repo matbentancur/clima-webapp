@@ -6,6 +6,8 @@ export default class Clima extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            ciudad: this.props.data.ciudad,
+            pais: this.props.data.pais,
             clima: '', 
             temperatura: 0,
             icono: '',
@@ -37,6 +39,8 @@ export default class Clima extends Component {
         .then((result) => result.json())
         .then((result) => {
             this.setState({
+                ciudad: this.props.data.ciudad,
+                pais: this.props.data.pais,
                 clima: result.weather[0].description,
                 temperatura: result.main.temp,
                 icono: result.weather[0].icon,
@@ -63,7 +67,17 @@ export default class Clima extends Component {
         // {this.state.mensajeDeError || this.props.data.mensajeDeError ? <p>Ocurrió un error, no se pudo obtener el clima</p> : 
         // <p>Clima: {this.state.clima}</p>}
         // <p>Temperatura: {this.state.temperatura}°C</p>
+        
         <div className="Clima">
+            <Background data={this.state}/>
+            <div class="row row-cols-1">
+                <div class="col city">
+                    <p class="fs-2 text-decoration-underline">{this.state.ciudad}</p>
+                </div>
+                <div class="col country">
+                    <p class="fs-4">{this.state.pais}</p>
+                </div>
+            </div>
             <div class="col temperature">
                     <p class="fs-1 badge bg-secondary text-wrap">{this.state.temperatura}°C</p>
             </div>

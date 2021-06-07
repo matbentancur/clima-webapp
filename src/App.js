@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BuscarCiudad from './BuscarCiudad';
 import Clima from './Clima';
 import Map from './Mapa';
 
@@ -50,18 +51,13 @@ export default class App extends Component {
     }
     render() {
         return (
-        <div class="card-main">
-            <div class="row row-cols-1">
-                <div class="col city">
-                    <p class="fs-2 text-decoration-underline">{this.state.ciudad}</p>
-                </div>
-                <div class="col country">
-                    <p class="fs-4">{this.state.pais}</p>
-                </div>
+        <div class="card-panel">
+            <BuscarCiudad />
+            <div class="card card-main">
                 <Clima data={this.state}/>
             </div>
-
-            <div class="row row-cols-1">
+            <div class="card-map">
+                <div class="row row-cols-1">
                 <Map
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
                     loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
@@ -70,8 +66,10 @@ export default class App extends Component {
                     center={{ lat: -32.928523, lng: -56.083731 }}
                     zoom={6}
                 />
+                </div>
             </div>
         </div>
+
         )
     }
   
