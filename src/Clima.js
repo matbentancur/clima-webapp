@@ -81,7 +81,7 @@ export default class Clima extends Component {
                     <Icono data={this.state}/>
                 </div>
                 <div class="col description">
-                    <p class="fs-1">{this.state.clima}</p>
+                    <p class="fs-1">{this.state.clima} ({this.state.icono})</p>
                 </div>
                 <div class="row row-cols-2">
                     <div class="col extra-value">

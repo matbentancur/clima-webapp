@@ -51,7 +51,7 @@ export default class Icono extends Component {
         if (icono === '01d'){
             this.setState({icono: clearSkyDay});
         }
-        else if(icono === '01d'){
+        else if(icono === '01n'){
             this.setState({icono: clearSkyNight});
         }
         else if(icono === '02d'){

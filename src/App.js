@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BuscarCiudad from './BuscarCiudad';
 import Clima from './Clima';
 import Map from './Mapa';
+import Pronostico from "./Pronostico";
 
 export default class App extends Component {
     constructor(props) {
@@ -71,6 +72,9 @@ export default class App extends Component {
         <div class="panel-tarjetas">
             <BuscarCiudad handler = {this.handler}/>
             <Clima 
+                data={this.state}
+            />
+            <Pronostico 
                 data={this.state}
             />
             <Map handler = {this.handler}
