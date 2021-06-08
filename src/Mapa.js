@@ -33,21 +33,15 @@ class Mapa extends React.Component {
 
   render() {
     return (
-      <div class="tarjeta">
-        <div class="tarjeta-mapa">
-          <div class="row row-cols-1">
-                <GoogleMap
-                  onClick={this.addMarker.bind(this)}
-                  defaultZoom={this.props.zoom}
-                  defaultCenter={this.props.center}
-                >
-                      <Marker
-                        position={{ lat: this.state.latitud, lng: this.state.longitud }}
-                      />
-                </GoogleMap>
-            </div>
-          </div>
-        </div>
+        <GoogleMap
+          onClick={this.addMarker.bind(this)}
+          defaultZoom={this.props.zoom}
+          defaultCenter={this.props.center}
+        >
+              <Marker
+                position={{ lat: this.state.latitud, lng: this.state.longitud }}
+              />
+        </GoogleMap>
     );
   }
 }
