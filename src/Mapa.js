@@ -1,5 +1,4 @@
 import React from "react";
-import Clima from './Clima';
 import {
   withGoogleMap,
   GoogleMap,
@@ -7,11 +6,11 @@ import {
   Marker
 } from "react-google-maps";
 
-class MapWithMarkers extends React.Component {
+class Mapa extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {ciudad: '', latitud: 0, longitud: 0, mostrarClima: false };
+    this.state = {ciudad: '', latitud: 0, longitud: 0};
   }
 
   addMarker(e) {
@@ -24,8 +23,7 @@ class MapWithMarkers extends React.Component {
     .then((result) => result.json())
     .then((result) => {
         this.setState({ciudad: result[0].name});
-        this.setState({mostrarClima: true});
-        this.setState({mensajeDeError: false}); 
+        this.props.handler(result[0].name);
     })
     .catch(error => {
         this.setState({mensajeDeError: true}); 
@@ -47,7 +45,6 @@ class MapWithMarkers extends React.Component {
                         position={{ lat: this.state.latitud, lng: this.state.longitud }}
                       />
                 </GoogleMap>
-                {this.state.mostrarClima ? <Clima data={this.state}/> : null}
             </div>
           </div>
         </div>
@@ -55,4 +52,4 @@ class MapWithMarkers extends React.Component {
   }
 }
 
-export default withScriptjs(withGoogleMap(MapWithMarkers));
+export default withScriptjs(withGoogleMap(Mapa));
