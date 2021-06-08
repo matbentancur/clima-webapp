@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BuscarCiudad from './BuscarCiudad';
 import Clima from './Clima';
-import Map from './Mapa';
+import Mapa from './Mapa';
 import Pronostico from "./Pronostico";
 
 export default class App extends Component {
@@ -77,14 +77,18 @@ export default class App extends Component {
             <Pronostico 
                 data={this.state}
             />
-            <Map handler = {this.handler}
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
-                loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
-                containerElement={<div style={{ height: `400px` }} />}
-                mapElement={<div style={{ height: `100%`, width: `100%` }} />}
-                center={{ lat: -32.928523, lng: -56.083731 }}
-                zoom={6}
-            />
+                <div class="tarjeta-mapa">
+                <div class="row row-cols-1">
+                    <Mapa handler = {this.handler}
+                        googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+                        loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
+                        containerElement={<div style={{ height: `400px` }} />}
+                        mapElement={<div style={{ height: `100%`, width: `100%` }} />}
+                        center={{ lat: -32.928523, lng: -56.083731 }}
+                        zoom={6}
+                    />
+                </div>
+                </div>
         </div>
         )
     }

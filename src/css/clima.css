@@ -166,7 +166,10 @@ img .fondo{
 
 .tarjeta-mapa{
   margin: auto;
+  margin-top: 2%;
+  width: 100%;
   border-radius: 15px;
+  opacity: 1;
 }
 
 .extra-value p{
