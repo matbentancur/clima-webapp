@@ -3,6 +3,7 @@ import BuscarCiudad from './BuscarCiudad';
 import Clima from './Clima';
 import Mapa from './Mapa';
 import Pronostico from "./Pronostico";
+import Alerta from "./Alerta";
 
 export default class App extends Component {
     constructor(props) {
@@ -77,7 +78,7 @@ export default class App extends Component {
             <Pronostico 
                 data={this.state}
             />
-                <div class="tarjeta-mapa">
+            <div class="tarjeta-mapa">
                 <div class="row row-cols-1">
                     <Mapa handler = {this.handler}
                         googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
@@ -88,7 +89,10 @@ export default class App extends Component {
                         zoom={6}
                     />
                 </div>
-                </div>
+            </div>
+            <Alerta 
+                data={this.state}
+            />
         </div>
         )
     }

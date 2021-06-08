@@ -151,20 +151,19 @@ export default class Pronostico extends Component {
                                 <p>{this.state.diaUnoDateTime}</p>
                             </div>
                             <div class="col icon">
-                                <p>{this.state.diaUnoIcono}</p>
                                 <Icono data={{icono: this.state.diaUnoIcono}}/>
                             </div>
                             <div class="col clima">
                                 <p>{this.state.diaUnoClima}</p>
                             </div>
                             <div class="col max">
-                                <p>Máx: {this.state.diaUnoMax}°C</p>
+                                <p>Máx: {this.state.diaUnoMax} °C</p>
                             </div>
                             <div class="col min">
-                                <p>Mín: {this.state.diaUnoMin}°C</p>
+                                <p>Mín: {this.state.diaUnoMin} °C</p>
                             </div>
                             <div class="col humedad">
-                                <p>Humedad: {this.state.diaUnoHumedad}%</p>
+                                <p>Hum: {this.state.diaUnoHumedad} %</p>
                             </div>
                             <div class="col viento">
                                 <p>Viento: {this.state.diaUnoViento} m/s</p>
@@ -179,20 +178,19 @@ export default class Pronostico extends Component {
                                 <p>{this.state.diaDosDateTime}</p>
                             </div>
                             <div class="col icon">
-                                <p>{this.state.diaDosIcono}</p>
                                 <Icono data={{icono: this.state.diaDosIcono}}/>
                             </div>
                             <div class="col clima">
                                 <p>{this.state.diaDosClima}</p>
                             </div>
                             <div class="col max">
-                                <p>Máx: {this.state.diaDosMax}°C</p>
+                                <p>Máx: {this.state.diaDosMax} °C</p>
                             </div>
                             <div class="col min">
-                                <p>Mín: {this.state.diaDosMin}°C</p>
+                                <p>Mín: {this.state.diaDosMin} °C</p>
                             </div>
                             <div class="col humedad">
-                                <p>Humedad: {this.state.diaDosHumedad}%</p>
+                                <p>Hum: {this.state.diaDosHumedad} %</p>
                             </div>
                             <div class="col viento">
                                 <p>Viento: {this.state.diaDosViento} m/s</p>
@@ -207,20 +205,19 @@ export default class Pronostico extends Component {
                                 <p>{this.state.diaTresDateTime}</p>
                             </div>
                             <div class="col icon">
-                                <p>{this.state.diaTresIcono}</p>
                                 <Icono data={{icono: this.state.diaTresIcono}}/>
                             </div>
                             <div class="col clima">
                                 <p>{this.state.diaTresClima}</p>
                             </div>
                             <div class="col max">
-                                <p>Máx: {this.state.diaTresMax}°C</p>
+                                <p>Máx: {this.state.diaTresMax} °C</p>
                             </div>
                             <div class="col min">
-                                <p>Mín: {this.state.diaTresMin}°C</p>
+                                <p>Mín: {this.state.diaTresMin} °C</p>
                             </div>
                             <div class="col humedad">
-                                <p>Humedad: {this.state.diaTresHumedad}%</p>
+                                <p>Hum: {this.state.diaTresHumedad} %</p>
                             </div>
                             <div class="col viento">
                                 <p>Viento: {this.state.diaTresViento} m/s</p>
@@ -235,20 +232,19 @@ export default class Pronostico extends Component {
                                 <p>{this.state.diaCuatroDateTime}</p>
                             </div>
                             <div class="col icon">
-                                <p>{this.state.diaCuatroIcono}</p>
                                 <Icono data={{icono: this.state.diaCuatroIcono}}/>
                             </div>
                             <div class="col clima">
                                 <p>{this.state.diaCuatroClima}</p>
                             </div>
                             <div class="col max">
-                                <p>Máx: {this.state.diaCuatroMax}°C</p>
+                                <p>Máx: {this.state.diaCuatroMax} °C</p>
                             </div>
                             <div class="col min">
-                                <p>Mín: {this.state.diaCuatroMin}°C</p>
+                                <p>Mín: {this.state.diaCuatroMin} °C</p>
                             </div>
                             <div class="col humedad">
-                                <p>Humedad: {this.state.diaCuatroHumedad}%</p>
+                                <p>Hum: {this.state.diaCuatroHumedad} %</p>
                             </div>
                             <div class="col viento">
                                 <p>Viento: {this.state.diaCuatroViento} m/s</p>
@@ -263,20 +259,19 @@ export default class Pronostico extends Component {
                                 <p>{this.state.diaCincoDateTime}</p>
                             </div>
                             <div class="col icon">
-                                <p>{this.state.diaCincoIcono}</p>
                                 <Icono data={{icono: this.state.diaCincoIcono}}/>
                             </div>
                             <div class="col clima">
                                 <p>{this.state.diaCincoClima}</p>
                             </div>
                             <div class="col max">
-                                <p>Máx: {this.state.diaCincoMax}°C</p>
+                                <p>Máx: {this.state.diaCincoMax} °C</p>
                             </div>
                             <div class="col min">
-                                <p>Mín: {this.state.diaCincoMin}°C</p>
+                                <p>Mín: {this.state.diaCincoMin} °C</p>
                             </div>
                             <div class="col humedad">
-                                <p>Humedad: {this.state.diaCincoHumedad}%</p>
+                                <p>Hum: {this.state.diaCincoHumedad} %</p>
                             </div>
                             <div class="col viento">
                                 <p>Viento: {this.state.diaCincoViento} m/s</p>

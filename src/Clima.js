@@ -75,32 +75,32 @@ export default class Clima extends Component {
                     </div>
                 </div>
                 <div class="col temperature">
-                        <p class="fs-1 badge bg-secondary text-wrap">{this.state.temperatura}°C</p>
+                        <p class="fs-1 badge bg-secondary text-wrap">{this.state.temperatura} °C</p>
                 </div>
                 <div class="col icon">
                     <Icono data={this.state}/>
                 </div>
                 <div class="col description">
-                    <p class="fs-1">{this.state.clima} ({this.state.icono})</p>
+                    <p class="fs-1">{this.state.clima}</p>
                 </div>
                 <div class="row row-cols-2">
                     <div class="col extra-value">
-                        <p class="text-start">Máxima: {this.state.maxima}°C</p>
+                        <p class="text-start">Máxima: {this.state.maxima} °C</p>
                     </div>
                     <div class="col extra-value">
-                        <p class="text-start "> Mínima: {this.state.minima}°C</p>
+                        <p class="text-start "> Mínima: {this.state.minima} °C</p>
                     </div>
                     <div class="col extra-value">
-                        <p class="text-start">Sensación Térmica: {this.state.sensacionTermica}°C</p>
+                        <p class="text-start">Sensación: {this.state.sensacionTermica}°C</p>
                     </div>
                     <div class="col extra-value">
                         <p class="text-start">Presión: {this.state.presion} hPa</p>
                     </div>
                     <div class="col extra-value">
-                        <p class="text-start">Humedad: {this.state.humedad}%</p>
+                        <p class="text-start">Humedad: {this.state.humedad} %</p>
                     </div>
                     <div class="col extra-value">
-                        <p class="text-start">Nubosidad: {this.state.nubosidad}%</p>
+                        <p class="text-start">Nubosidad: {this.state.nubosidad} %</p>
                     </div>
                     <div class="col extra-value">
                         <p class="text-start">Viento: {this.state.viento} m/s</p>
