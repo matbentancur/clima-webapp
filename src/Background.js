@@ -52,6 +52,18 @@ export default class Background extends Component {
         let element = document.getElementById("body");
         let backgroundStyle = "background-default";
 
+        var classList = ReactDOM.findDOMNode(element).classList;
+        while (classList.length > 0) {
+            classList.remove(classList.item(0));
+        }
+
+        ReactDOM.findDOMNode(element).classList.add("d-flex");
+        ReactDOM.findDOMNode(element).classList.add("h-100");
+        ReactDOM.findDOMNode(element).classList.add("text-center");
+        ReactDOM.findDOMNode(element).classList.add("text-white");
+        ReactDOM.findDOMNode(element).classList.add("bg-dark");
+        ReactDOM.findDOMNode(element).classList.add("background");
+
         if (icono === '01d'){
             this.setState({fondo: clearSkyDay});
             backgroundStyle = "background-clear-sky-day";

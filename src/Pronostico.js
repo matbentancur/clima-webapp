@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Icono from './Icono';
+
 var dateFormat = require("dateformat");
 
 dateFormat.i18n = {
@@ -84,6 +86,7 @@ export default class Pronostico extends Component {
 
                 diaUnoDateTime: dateFormat(new Date(result.daily[1].dt * 1000), "dd mmmm yyyy"),
                 diaUnoIcono: result.daily[1].weather[0].icon,
+                diaUnoClima: result.daily[1].weather[0].description,
                 diaUnoMax: result.daily[1].temp.max,
                 diaUnoMin: result.daily[1].temp.min,
                 diaUnoHumedad: result.daily[1].humidity,
@@ -91,6 +94,7 @@ export default class Pronostico extends Component {
 
                 diaDosDateTime: dateFormat(new Date(result.daily[2].dt * 1000), "dd mmmm yyyy"),
                 diaDosIcono: result.daily[2].weather[0].icon,
+                diaDosClima: result.daily[2].weather[0].description,
                 diaDosMax: result.daily[2].temp.max,
                 diaDosMin: result.daily[2].temp.min,
                 diaDosHumedad: result.daily[2].humidity,
@@ -98,6 +102,7 @@ export default class Pronostico extends Component {
 
                 diaTresDateTime: dateFormat(new Date(result.daily[3].dt * 1000), "dd mmmm yyyy"),
                 diaTresIcono: result.daily[3].weather[0].icon,
+                diaTresClima: result.daily[3].weather[0].description,
                 diaTresMax: result.daily[3].temp.max,
                 diaTresMin: result.daily[3].temp.min,
                 diaTresHumedad: result.daily[3].humidity,
@@ -105,6 +110,7 @@ export default class Pronostico extends Component {
 
                 diaCuatroDateTime: dateFormat(new Date(result.daily[4].dt * 1000), "dd mmmm yyyy"),
                 diaCuatroIcono: result.daily[4].weather[0].icon,
+                diaCuatroClima: result.daily[4].weather[0].description,
                 diaCuatroMax: result.daily[4].temp.max,
                 diaCuatroMin: result.daily[4].temp.min,
                 diaCuatroHumedad: result.daily[4].humidity,
@@ -112,6 +118,7 @@ export default class Pronostico extends Component {
 
                 diaCincoDateTime: dateFormat(new Date(result.daily[5].dt * 1000), "dd mmmm yyyy"),
                 diaCincoIcono: result.daily[5].weather[0].icon,
+                diaCincoClima: result.daily[5].weather[0].description,
                 diaCincoMax: result.daily[5].temp.max,
                 diaCincoMin: result.daily[5].temp.min,
                 diaCincoHumedad: result.daily[5].humidity,
@@ -145,6 +152,10 @@ export default class Pronostico extends Component {
                             </div>
                             <div class="col icon">
                                 <p>{this.state.diaUnoIcono}</p>
+                                <Icono data={{icono: this.state.diaUnoIcono}}/>
+                            </div>
+                            <div class="col clima">
+                                <p>{this.state.diaUnoClima}</p>
                             </div>
                             <div class="col max">
                                 <p>Máx: {this.state.diaUnoMax}°C</p>
@@ -169,6 +180,10 @@ export default class Pronostico extends Component {
                             </div>
                             <div class="col icon">
                                 <p>{this.state.diaDosIcono}</p>
+                                <Icono data={{icono: this.state.diaDosIcono}}/>
+                            </div>
+                            <div class="col clima">
+                                <p>{this.state.diaDosClima}</p>
                             </div>
                             <div class="col max">
                                 <p>Máx: {this.state.diaDosMax}°C</p>
@@ -193,6 +208,10 @@ export default class Pronostico extends Component {
                             </div>
                             <div class="col icon">
                                 <p>{this.state.diaTresIcono}</p>
+                                <Icono data={{icono: this.state.diaTresIcono}}/>
+                            </div>
+                            <div class="col clima">
+                                <p>{this.state.diaTresClima}</p>
                             </div>
                             <div class="col max">
                                 <p>Máx: {this.state.diaTresMax}°C</p>
@@ -217,6 +236,10 @@ export default class Pronostico extends Component {
                             </div>
                             <div class="col icon">
                                 <p>{this.state.diaCuatroIcono}</p>
+                                <Icono data={{icono: this.state.diaCuatroIcono}}/>
+                            </div>
+                            <div class="col clima">
+                                <p>{this.state.diaCuatroClima}</p>
                             </div>
                             <div class="col max">
                                 <p>Máx: {this.state.diaCuatroMax}°C</p>
@@ -241,6 +264,10 @@ export default class Pronostico extends Component {
                             </div>
                             <div class="col icon">
                                 <p>{this.state.diaCincoIcono}</p>
+                                <Icono data={{icono: this.state.diaCincoIcono}}/>
+                            </div>
+                            <div class="col clima">
+                                <p>{this.state.diaCincoClima}</p>
                             </div>
                             <div class="col max">
                                 <p>Máx: {this.state.diaCincoMax}°C</p>

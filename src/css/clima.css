@@ -164,6 +164,11 @@ img .fondo{
   height: 90%;
 }
 
+.tarjeta-pronostico .icon img{
+  width: 40%;
+  height: 40%;
+}
+
 .tarjeta-mapa{
   margin: auto;
   margin-top: 2%;

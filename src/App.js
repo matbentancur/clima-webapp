@@ -83,7 +83,7 @@ export default class App extends Component {
                         googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
                         loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
                         containerElement={<div style={{ height: `400px` }} />}
-                        mapElement={<div style={{ height: `100%`, width: `100%` }} />}
+                        mapElement={<div style={{ height: `100%`, width: `100%`, borderRadius: `15px` }} />}
                         center={{ lat: -32.928523, lng: -56.083731 }}
                         zoom={6}
                     />
