@@ -56,7 +56,7 @@ export default class Background extends Component {
             this.setState({fondo: clearSkyDay});
             backgroundStyle = "background-clear-sky-day";
         }
-        else if(icono === '01d'){
+        else if(icono === '01n'){
             this.setState({fondo: clearSkyNight});
             backgroundStyle = "background-clear-sky-night";
         }
