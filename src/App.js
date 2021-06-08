@@ -14,7 +14,24 @@ export default class App extends Component {
             mostrarClima: false,
             mensajeDeError: false
         }; 
-      }
+        this.handler = this.handler.bind(this)
+    }
+  
+    handler(ciudad) {
+      this.setState({
+        ciudad: ciudad
+      })
+      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ciudad}&imit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
+      fetch(url)
+      .then((result) => result.json())
+      .then((result) => {
+          this.setState({pais: result[0].country});
+      })
+      .catch(error => {
+          this.setState({mensajeDeError: true}); 
+          console.error(error)
+      });
+    }
 
   componentDidMount() {
     // Obtener ubicación
@@ -52,11 +69,11 @@ export default class App extends Component {
     render() {
         return (
         <div class="panel-tarjetas">
-            <BuscarCiudad />
+            <BuscarCiudad handler = {this.handler}/>
             <Clima 
                 data={this.state}
             />
-            <Map
+            <Map handler = {this.handler}
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
                 loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
                 containerElement={<div style={{ height: `400px` }} />}

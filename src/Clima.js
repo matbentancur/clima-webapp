@@ -62,12 +62,7 @@ export default class Clima extends Component {
     }
 
     render() {
-        return (
-        // <p>Ciudad: {this.props.data.ciudad}</p>
-        // {this.state.mensajeDeError || this.props.data.mensajeDeError ? <p>Ocurrió un error, no se pudo obtener el clima</p> : 
-        // <p>Clima: {this.state.clima}</p>}
-        // <p>Temperatura: {this.state.temperatura}°C</p>
-        
+        return (      
         <div class="tarjeta">
             <div class="tarjeta-clima">
                 <Background data={this.state}/>
