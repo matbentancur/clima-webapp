@@ -27,7 +27,7 @@ export default class App extends Component {
       fetch(url)
       .then((result) => result.json())
       .then((result) => {
-          this.setState({pais: result[0].country});
+          this.setState({latitud: result[0].lat, longitud: result[0].lon, pais: result[0].country});
       })
       .catch(error => {
           this.setState({mensajeDeError: true}); 
