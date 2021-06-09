@@ -67,11 +67,11 @@ export default class Clima extends Component {
             <div class="tarjeta-clima">
                 <Background data={this.state}/>
                 <div class="row row-cols-1">
-                    <div class="col city">
-                        <p class="fs-2 text-decoration-underline">{this.state.ciudad}</p>
+                    <div class="col title">
+                        <p class="fs-1">Clima</p>
                     </div>
-                    <div class="col country">
-                        <p class="fs-4">{this.state.pais}</p>
+                    <div class="col city">
+                        <p class="fs-2">{this.state.ciudad}, {this.state.pais}</p>
                     </div>
                 </div>
                 <div class="col temperature">
@@ -83,7 +83,7 @@ export default class Clima extends Component {
                 <div class="col description">
                     <p class="fs-1">{this.state.clima}</p>
                 </div>
-                <div class="row row-cols-2">
+                <div class="row row-cols-4">
                     <div class="col extra-value">
                         <p class="text-start">Máxima: {this.state.maxima} °C</p>
                     </div>

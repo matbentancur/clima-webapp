@@ -72,18 +72,23 @@ export default class Aire extends Component {
 
         if (this.state.calidad === 1){
             this.setState({icono: veryHappy});
+            this.setState({descripcion: "Bueno"});
         }
         else if (this.state.calidad === 2){
             this.setState({icono: happy});
+            this.setState({descripcion: "Aceptable"});
         }
         else if (this.state.calidad === 3){
             this.setState({icono: neutral});
+            this.setState({descripcion: "Moderado"});
         }
         else if (this.state.calidad === 4){
             this.setState({icono: sad});
+            this.setState({descripcion: "Pobre"});
         }
         else if (this.state.calidad === 5){
             this.setState({icono: verySad});
+            this.setState({descripcion: "Muy Pobre"});
         }
         else{
             this.setState({icono: aireIcono});
@@ -96,8 +101,16 @@ export default class Aire extends Component {
             <div class="tarjeta-aire">
                 <div class="row row-cols-1">
 
+                    <div class="col title">
+                        <p class="fs-1">Aire</p>
+                    </div>
+
                     <div class="col icon">
                         <img src={this.state.icono} alt=""/>
+                    </div>
+
+                    <div class="col descripcion">
+                        <p class="fs-1">{this.state.descripcion}</p>
                     </div>
 
                     <div class="col">

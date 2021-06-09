@@ -142,8 +142,14 @@ export default class Pronostico extends Component {
         
         <div class="tarjeta">
             <div class="tarjeta-pronostico">
-                <div class="row row-cols-5">
 
+                <div class="row row-cols-1">
+                    <div class="col title">
+                        <p class="fs-1">Pronostico</p>
+                    </div>
+                </div>
+
+                <div class="row row-cols-5">
                     <div class="col">
                         <div class="row row-cols-1">
                             <div class="col dia">
