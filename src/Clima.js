@@ -29,12 +29,12 @@ export default class Clima extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.data.ciudad !== prevProps.data.ciudad) {
-            this.obtenerClima(this.props.data.ciudad);
+            this.obtenerClima(this.props.data.latitud, this.props.data.longitud);
         }
     };
 
-    obtenerClima(ciudad) {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}&units=metric`
+    obtenerClima(latitud, longitud) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&lang=es&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}&units=metric`
         fetch(url)
         .then((result) => result.json())
         .then((result) => {

@@ -20,15 +20,12 @@ export default class App extends Component {
         this.handler = this.handler.bind(this)
     }
   
-    handler(ciudad) {
-      this.setState({
-        ciudad: ciudad
-      })
-      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ciudad}&imit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
+    handler(latitud, longitud) {
+      const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitud}&lon=${longitud}&lang=es&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
       fetch(url)
       .then((result) => result.json())
       .then((result) => {
-          this.setState({latitud: result[0].lat, longitud: result[0].lon, pais: result[0].country});
+          this.setState({latitud: result[0].lat, longitud: result[0].lon, pais: result[0].country, ciudad: result[0].name});
       })
       .catch(error => {
           this.setState({mensajeDeError: true}); 
@@ -75,7 +72,7 @@ export default class App extends Component {
             <BuscarCiudad handler = {this.handler}/>
             <div class="tarjeta-mapa">
                 <div class="row row-cols-1">
-                    <Mapa handler = {this.handler}
+                    <Mapa handler = {this.handler} data={this.state}
                         googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
                         loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
                         containerElement={<div style={{ height: `200px` }} />}
