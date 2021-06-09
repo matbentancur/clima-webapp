@@ -4,6 +4,7 @@ import Clima from './Clima';
 import Mapa from './Mapa';
 import Pronostico from "./Pronostico";
 import Alerta from "./Alerta";
+import Aire from "./Aire";
 
 export default class App extends Component {
     constructor(props) {
@@ -72,24 +73,27 @@ export default class App extends Component {
         return (
         <div class="panel-tarjetas">
             <BuscarCiudad handler = {this.handler}/>
-            <Clima 
-                data={this.state}
-            />
-            <Pronostico 
-                data={this.state}
-            />
             <div class="tarjeta-mapa">
                 <div class="row row-cols-1">
                     <Mapa handler = {this.handler}
                         googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
                         loadingElement={<div style={{ height: `100%`, width: `100%` }} />}
-                        containerElement={<div style={{ height: `400px` }} />}
+                        containerElement={<div style={{ height: `200px` }} />}
                         mapElement={<div style={{ height: `100%`, width: `100%`, borderRadius: `15px` }} />}
                         center={{ lat: -32.928523, lng: -56.083731 }}
                         zoom={6}
                     />
                 </div>
             </div>
+            <Clima 
+                data={this.state}
+            />
+            <Pronostico 
+                data={this.state}
+            />
+            <Aire 
+                data={this.state}
+            />
             <Alerta 
                 data={this.state}
             />

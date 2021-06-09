@@ -60,7 +60,7 @@ export default class Alerta extends Component {
         return (
         <div class="tarjeta">
             <div class="tarjeta-alerta">
-                <div class="row row-cols-2">
+                <div class="row row-cols-1">
 
                     <div class="col icono">
                         <img src={alertIcon} alt=""/>
