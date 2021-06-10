@@ -18,13 +18,12 @@ export default class Clima extends Component {
             humedad: 0,
             visibilidad: 0,
             viento: 0,  
-            nubosidad: 0,  
-            mensajeDeError: false
+            nubosidad: 0
         };
       }
 
     componentDidMount() {
-        this.obtenerClima(this.props.data.ciudad);
+        this.obtenerClima(this.props.data.latitud, this.props.data.longitud);
     };
 
     componentDidUpdate(prevProps) {
@@ -56,7 +55,6 @@ export default class Clima extends Component {
             }); 
         })
         .catch(error => {
-            this.setState({mensajeDeError: true}); 
             console.error(error)
         });
     }
