@@ -9,7 +9,7 @@ export default class BuscarCiudad extends Component {
     
     handleSubmit(event) {
         event.preventDefault();       
-        this.props.handler(this.element.value);
+        this.props.handlerCiudad(this.element.value);
     }
 
     render() {
