@@ -114,7 +114,7 @@ export default class Aire extends Component {
                     </div>
 
                     <div class="col">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-3">
                             <div class="col calidad">
                                 <p>Indice de Calidad: {this.state.calidad}</p>
                             </div>
